@@ -12,7 +12,7 @@ lat2 = 'landaveragetemperature'
 
 st.title("Global Temperature Change from 1750-2015")
 
-climate_url = ('C:/Users/audrey/Documents/Datasets/climate_change_temp_change/GlobalTemperatures.csv')
+climate_url = ('GlobalTemperatures.csv')
 
 
 
