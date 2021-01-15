@@ -12,7 +12,7 @@ lat2 = 'landaveragetemperature'
 
 st.title("Global Temperature Change from 1750-2015")
 
-climate_url = ('C:/Users/audrey/Documents/Datasets/climate_change_temp_change/GlobalTemperatures.csv')
+climate_url = ('GlobalTemperatures.csv')
 
 
 
@@ -21,17 +21,18 @@ climate_url = ('C:/Users/audrey/Documents/Datasets/climate_change_temp_change/Gl
 def load_data_climate():
     data = pd.read_csv(climate_url, usecols=[dt, lat])
     data.dropna(inplace=True)
-    
     return data
 
 temp_data = load_data_climate()
- 
 
+#print(temp_data["LandAverageTemperature"])
 
 if st.checkbox('Show raw data for historic global temperature'):
     st.write(temp_data)
 
-
+st.subheader('Number of pickups by hour')
+hist_values = np.histogram(temp_data["LandAverageTemperature"])[0]
+st.line_chart(hist_values)
 
 
 
