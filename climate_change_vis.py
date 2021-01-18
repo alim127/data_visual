@@ -30,9 +30,9 @@ temp_data = load_data_climate()
 if st.checkbox('Show raw data for historic global temperature'):
     st.write(temp_data)
 
-st.subheader('Number of pickups by hour')
+st.subheader('Number of occurences of land temperatures')
 hist_values = np.histogram(temp_data["LandAverageTemperature"])[0]
-st.line_chart(hist_values)
+st.bar_chart(hist_values)
 
 
 
